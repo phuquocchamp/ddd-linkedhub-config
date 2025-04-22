@@ -4,5 +4,7 @@ build:
 application:
   name: profile-service
   description: Profile Service
+  version: 1.0.0
   profile: prod
   message: Welcome to the Profile Service
+  email: "{cipher}c969c667f04d20068aae2f1d1a7523c714d272b5c13974e131b70e05b9291b01e74150f851baa5e155a187fb64a9c0e4"
