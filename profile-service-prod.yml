@@ -4,4 +4,5 @@ build:
 application:
   name: profile-service
   description: Profile Service
+  profile: prod
   message: Welcome to the Profile Service
