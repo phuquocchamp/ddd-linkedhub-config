@@ -1,5 +1,7 @@
+build:
+  version: 1.0.0
+
 application:
   name: profile-service
   description: Profile Service
-  version: 1.0.0
-  profile: prod
+  message: Welcome to the Profile Service

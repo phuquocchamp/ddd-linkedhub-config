@@ -4,4 +4,4 @@ build:
 application:
   name: profile-service
   description: Profile Service
-  version: 1.0.0
+  message: Welcome to the Profile Service
