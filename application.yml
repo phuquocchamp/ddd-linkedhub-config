@@ -35,8 +35,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh, refresh-bus
-
+        include: "*"
   health:
     readiness-state:
       enabled: true
