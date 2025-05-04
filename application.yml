@@ -1,5 +1,8 @@
 spring:
   cloud:
+    stream:
+      default-binder: rabbit
+
     bus:
       enabled: true
       refresh:
