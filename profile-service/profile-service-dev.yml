@@ -24,7 +24,7 @@ spring:
 
 info:
   build:
-    version: "1.0.0"
+    version: "1.0.1"
   contact:
     email: "hoangtanphuquoc@gmail.com"
     phone: "0333507708"
