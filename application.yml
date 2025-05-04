@@ -1,8 +1,8 @@
 spring:
-  profiles:
-    active: git
   cloud:
     config:
+      activate:
+        on-profile: dev
       server:
         git:
           uri: https://github.com/phuquocchamp/ddd-linkedhub-config.git
