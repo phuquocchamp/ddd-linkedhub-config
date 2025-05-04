@@ -1,4 +1,8 @@
 spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
   datasource:
     url: jdbc:postgresql://localhost:5432/auth
     username: postgres
@@ -8,3 +12,12 @@ jwt:
   secret:
     key: "blj8MNM/hiV/8XJ7kh9SuSOIiseqjSIlP+zLigU1N24kp0ISrFWbEQ=="
     expiration: 3600000 # 1 hour
+
+info:
+  application:
+    name: auth-service
+    branch: dev
+    description: Auth Service for Domain Driven Deign LinkedHub
+    version: 1.0.0
+  env:
+    enabled: true
