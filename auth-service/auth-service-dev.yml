@@ -1,3 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth
+    username: postgres
+    password: secret
+
 jwt:
   secret:
     key: "blj8MNM/hiV/8XJ7kh9SuSOIiseqjSIlP+zLigU1N24kp0ISrFWbEQ=="
