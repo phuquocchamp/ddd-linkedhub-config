@@ -1,14 +1,57 @@
 spring:
   cloud:
-    config:
-      activate:
-        on-profile: dev
-      server:
-        git:
-          uri: https://github.com/phuquocchamp/ddd-linkedhub-config.git
-          default-label: dev
-          clone-on-start: true
-          force-pull: true
-# logging:
-#   level:
-#     root: DEBUG
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
+
+    rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+
+    kafka:
+      bootstrap-servers: localhost:9092
+      producer:
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+        acks:
+          -1 # 0: no wait for kafka response
+          # 1: leader write success, not wait for follower
+          #-1: wait for all leader, and replication
+        retries: 1 # retries when event send error
+        properties:
+          [enable.idempotence]: true # check duplicate event
+          [max.in.flight.requests.per.connection]: 5
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+jwt:
+  secret:
+    key: "blj8MNM/hiV/8XJ7kh9SuSOIiseqjSIlP+zLigU1N24kp0ISrFWbEQ=="
+    expiration: 3600000 # 1 hour
+
+logging:
+  level:
+    org.springframework.cloud.config: DEBUG

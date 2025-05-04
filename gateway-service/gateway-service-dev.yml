@@ -1,4 +1,22 @@
-jwt:
-  secret:
-    key: "blj8MNM/hiV/8XJ7kh9SuSOIiseqjSIlP+zLigU1N24kp0ISrFWbEQ=="
-    expiration: 3600000 # 1 hour
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+
+info:
+  application:
+    name: ${spring.application.name}
+    description: Gateway Service for Domain Driven Deign LinkedHub
+    version: 1.0.0
+  env:
+    enabled: true

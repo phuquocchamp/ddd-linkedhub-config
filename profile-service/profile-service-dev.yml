@@ -1,3 +1,27 @@
+server:
+  port: 8092
+
+spring:
+  cloud:
+    config:
+      name: profile-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/profile
+    username: postgres
+    password: secret
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc: time_zone=UTC
+  jackson:
+    time-zone: UTC
+
 build:
   version: "1.0.0"
 
