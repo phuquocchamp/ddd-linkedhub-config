@@ -22,6 +22,13 @@ spring:
   jackson:
     time-zone: UTC
 
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8761/eureka}
+
 info:
   application:
     name: auth-service
