@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}
 
 spring:
   cloud:
@@ -17,6 +17,6 @@ info:
   application:
     name: ${spring.application.name}
     description: Gateway Service for Domain Driven Deign LinkedHub
-    version: 1.0.0
+    version: ${APP_VERSION:1.0.0}
   env:
-    enabled: true
+    enabled: ${ENV_ENABLED:true}
