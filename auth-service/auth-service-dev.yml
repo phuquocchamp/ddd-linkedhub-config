@@ -25,7 +25,6 @@ spring:
 info:
   application:
     name: auth-service
-    branch: dev
     description: Auth Service for Domain Driven Deign LinkedHub
     version: ${APP_VERSION:1.0.0}
   env:

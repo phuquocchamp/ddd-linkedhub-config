@@ -1,5 +1,5 @@
 server:
-  port: 8092
+  port: ${SERVER_PORT:8092}
 
 spring:
   cloud:
@@ -7,9 +7,9 @@ spring:
       name: profile-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5433/profile
-    username: postgres
-    password: secret
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/profile
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:secret}
   jpa:
     hibernate:
       ddl-auto: update
@@ -23,8 +23,9 @@ spring:
     time-zone: UTC
 
 info:
-  build:
-    version: "1.0.2"
-  contact:
-    email: "hoangtanphuquoc@gmail.com"
-    phone: "0333507708"
+  application:
+    name: auth-service
+    description: Profile Service for Domain Driven Deign LinkedHub
+    version: ${APP_VERSION:1.0.0}
+  env:
+    enabled: ${ENV_ENABLED:true}
